@@ -10,69 +10,69 @@ public class BamBooGame : BamBooSdkListener
 	private GameObject inputObj;
 	private GameObject outputObj;
 	private string uid = "";
-	
+
 	private Dictionary<uint, long> _debugMsgDict;
-    // Start is called before the first frame update
-    void Start()
-    {
+	// Start is called before the first frame update
+	void Start()
+	{
 		inputObj = GameObject.Find("Canvas/input");
-        outputObj = GameObject.Find("Canvas/output");
-    }
+		outputObj = GameObject.Find("Canvas/output");
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	// Update is called once per frame
+	void Update()
+	{
 
-    private void OnDestroy()
-    {
-	    Debug.Log("exit");
-    }
+	}
 
-    public void tapInit()
+	private void OnDestroy()
+	{
+		Debug.Log("exit");
+	}
+
+	public void tapInit()
 	{
 		showInput("tapInit");
-        BamBooSdk.getInstance().setListener(this);
+		BamBooSdk.getInstance().setListener(this);
 		BamBooSdk.getInstance().init();
 	}
-	
+
 	public void tapLogin()
 	{
 		showInput("taplogin");
-        BamBooSdk.getInstance().login();
+		BamBooSdk.getInstance().login();
 	}
 
 	public void tapLogout()
 	{
 		showInput("tapLogout");
-        BamBooSdk.getInstance().logout();
+		BamBooSdk.getInstance().logout();
 	}
 
 
-    public void tapExit()
+	public void tapExit()
 	{
-        showInput("tapExit");
-        BamBooSdk.getInstance().exit();
+		showInput("tapExit");
+		BamBooSdk.getInstance().exit();
 	}
 
 
 	public void tapUserCenter()
 	{
-        showInput("tapUserCenter");
-        BamBooSdk.getInstance().userCenter();
+		showInput("tapUserCenter");
+		BamBooSdk.getInstance().userCenter();
 	}
 
 	public void tapGuestUpdate()
 	{
 		showInput("tapGuestUpdate");
-        BamBooSdk.getInstance().guestUpgrade();
+		BamBooSdk.getInstance().guestUpgrade();
 	}
 
 
-    public void tapCreateRole()
+	public void tapCreateRole()
 	{
-        showInput("tapCreateRole");
+		showInput("tapCreateRole");
 		RoleInfo roleInfo = new RoleInfo();
 		roleInfo.roleId = this.uid;
 		roleInfo.roleBalance = "0";
@@ -87,7 +87,7 @@ public class BamBooGame : BamBooSdkListener
 
 	public void tapEnterGame()
 	{
-        showInput("tapEnterGame");
+		showInput("tapEnterGame");
 		RoleInfo roleInfo = new RoleInfo();
 		roleInfo.roleId = this.uid;
 		roleInfo.roleBalance = "0";
@@ -100,9 +100,9 @@ public class BamBooGame : BamBooSdkListener
 		BamBooSdk.getInstance().enterGame(roleInfo);
 	}
 
-	 public void tapUpdateRole()
+	public void tapUpdateRole()
 	{
-        showInput("tapUpdateRole");
+		showInput("tapUpdateRole");
 		RoleInfo roleInfo = new RoleInfo();
 		roleInfo.roleId = this.uid;
 		roleInfo.roleBalance = "0";
@@ -116,12 +116,12 @@ public class BamBooGame : BamBooSdkListener
 	}
 
 
-    public void tapPay()
+	public void tapPay()
 	{
-        showInput("tapPay");
-        OrderInfo orderInfo = new OrderInfo();
+		showInput("tapPay");
+		OrderInfo orderInfo = new OrderInfo();
 		RoleInfo roleInfo = new RoleInfo();
-		
+
 		orderInfo.cpOrderId = getOrderId();
 		orderInfo.itemId = "com.xinxiang.dk.normal.6";
 		orderInfo.itemName = "勾玉";
@@ -129,7 +129,7 @@ public class BamBooGame : BamBooSdkListener
 		orderInfo.extra = "extparma";
 		orderInfo.coin = 1;
 		orderInfo.money = 99;
-		orderInfo.num =1 ;
+		orderInfo.num = 1;
 		orderInfo.isTest = 1;
 		roleInfo.roleId = this.uid;
 		roleInfo.roleBalance = "0";
@@ -145,22 +145,22 @@ public class BamBooGame : BamBooSdkListener
 
 
 	public void tapBBPresetProperties()
-    {
+	{
 		showInput("tapBBPresetProperties");
-	    BBPresetProperties p = BamBooSdk.getInstance().getBBPresetProperties();
-		showOutputTitle("getBBPresetProperties",p);
-    }
+		BBPresetProperties p = BamBooSdk.getInstance().getBBPresetProperties();
+		showOutputTitle("getBBPresetProperties", p);
+	}
 
 	public void tapSetBBSuperProperties()
-    {
+	{
 		showInput("tapSetBBSuperProperties");
-	    BamBooSdk.getInstance().setBBSuperProperties("{\"server_id\":\"1001\"}");
-    }
+		BamBooSdk.getInstance().setBBSuperProperties("{\"server_id\":\"1001\"}");
+	}
 
 	public void tapEvent()
 	{
 		showInput("tapEvent");
-		BamBooSdk.getInstance().taEvent("test_event","{\"id\":1}");
+		BamBooSdk.getInstance().taEvent("test_event", "{\"id\":1}");
 	}
 
 	public void tapUserSet()
@@ -178,8 +178,8 @@ public class BamBooGame : BamBooSdkListener
 
 	public void tapOpenPage()
 	{
-        showInput("tapOpenPage");
-        BamBooSdk.getInstance().openPage(1,"https://www.qq.com");
+		showInput("tapOpenPage");
+		BamBooSdk.getInstance().openPage(1, "https://www.qq.com");
 	}
 
 	public void tapMemory()
@@ -204,27 +204,85 @@ public class BamBooGame : BamBooSdkListener
 
 	public void tapSetLanguage()
 	{
-        showInput("tapSetLanguage");
-        BamBooSdk.getInstance().setLanguage("zh-CN");
+		showInput("tapSetLanguage");
+		BamBooSdk.getInstance().setLanguage("zh-CN");
 	}
-	
+
 
 	public void tapLogReport()
-    {
+	{
 		showInput("tapLogReport");
-	    BamBooSdk.getInstance().logReport("info","hiadmin");
-		BamBooSdk.getInstance().logReport("error","error msg");
-    }
+		BamBooSdk.getInstance().logReport("info", "hiadmin");
+		BamBooSdk.getInstance().logReport("error", "error msg");
+	}
 
 
 	public void tapGetExtend()
-    {
+	{
 		showInput("tapGetExtend");
-	    BamBooSdk.getInstance().getExtend("cpu_temperature");
-    }
+		BamBooSdk.getInstance().getExtend("cpu_temperature");
+	}
 
+	public void sharedApp()
+	{
+		SharedContent sharedContent = SharedContent.newBuilder().sharedApp().build();
+		BamBooSdk.getInstance().shared(sharedContent);
+	}
 
-    //callback
+	public void sharedLink()
+	{
+		LinkContent linkContent = new LinkContent();
+		linkContent.setUrl("https://www.zhuziplay.com/");
+
+		SharedContent sharedContent = SharedContent.newBuilder()
+		.setText("分享竹子的官网")
+		.shareLink(linkContent)
+		.build();
+
+		BamBooSdk.getInstance().shared(sharedContent);
+	}
+
+	public void sharedPicuterLocal()
+	{
+		PictureLocalContent content = new PictureLocalContent();
+		content.setPath("/sdcard/aa.png");
+
+		SharedContent sharedContent = SharedContent.newBuilder()
+		.setText("分享本地图片")
+		.addPictureLocal(content)
+		.build();
+
+		BamBooSdk.getInstance().shared(sharedContent);
+	}
+
+	public void sharedPicuterUrl()
+	{
+		PictureUrlContent content = new PictureUrlContent();
+		content.setUrl("https://static.zhuziplay.com/office/image/cjua12psi0aoiptstv.png");
+
+		SharedContent sharedContent = SharedContent.newBuilder()
+		.setText("分享网络图片")
+		.addPictureUrl(content)
+		.build();
+
+		BamBooSdk.getInstance().shared(sharedContent);
+	}
+
+	public void sharedVideo()
+	{
+		VideoContent videoContent = new VideoContent();
+		videoContent.setDescription("Video Description");
+		videoContent.setVideoPath("sdcard/aa.mp4");
+
+		SharedContent sharedContent = SharedContent.newBuilder()
+		.setText("分享视频")
+		.addVideo(videoContent)
+		.build();
+
+		BamBooSdk.getInstance().shared(sharedContent);
+	}
+
+	//callback
 	public override void onInitSuccess()
 	{
 		showOutput("onInitSuccess ");
@@ -232,18 +290,18 @@ public class BamBooGame : BamBooSdkListener
 
 	public override void onInitFailed(ErrorMsg msg)
 	{
-		showOutputTitle("onInitFailed ",msg);
+		showOutputTitle("onInitFailed ", msg);
 	}
 
 	public override void onLoginSuccess(UserInfo userInfo)
 	{
 		this.uid = userInfo.uid;
-		showOutputTitle("onLoginSuccess",userInfo);
+		showOutputTitle("onLoginSuccess", userInfo);
 	}
 
-	public override void onLoginFailed (ErrorMsg errMsg)
+	public override void onLoginFailed(ErrorMsg errMsg)
 	{
-		showOutputTitle("onLoginFailed",errMsg);
+		showOutputTitle("onLoginFailed", errMsg);
 	}
 
 	public override void onGuestUpgradeSuccess()
@@ -254,7 +312,7 @@ public class BamBooGame : BamBooSdkListener
 
 	public override void onGuestUpgradeFailed(ErrorMsg errMsg)
 	{
-		showOutputTitle("onGuestUpgradeFailed",errMsg);
+		showOutputTitle("onGuestUpgradeFailed", errMsg);
 	}
 
 
@@ -267,11 +325,12 @@ public class BamBooGame : BamBooSdkListener
 	{
 		showOutput("onLogoutFailed");
 	}
-	
-	
-	public override void onSwitchAccountSuccess(UserInfo userInfo){
+
+
+	public override void onSwitchAccountSuccess(UserInfo userInfo)
+	{
 		//切换账号成功，清除原来的角色信息，使用获取到新的用户信息，回到进入游戏的界面，不需要再次调登录
-		showOutputTitle("onSwitchAccountSuccess",userInfo);
+		showOutputTitle("onSwitchAccountSuccess", userInfo);
 	}
 
 
@@ -288,100 +347,116 @@ public class BamBooGame : BamBooSdkListener
 
 
 	public override void onStorageSuccess(string data)
-    {
-		showOutputTitle("onStorageSuccess",data);
-    }
+	{
+		showOutputTitle("onStorageSuccess", data);
+	}
 
 	public override void onStorageFailed(ErrorMsg errMsg)
-    {
-	   showOutputTitle("onStorageFailed",errMsg);
-    }
+	{
+		showOutputTitle("onStorageFailed", errMsg);
+	}
 
 	public override void onOpenPageSuccess()
-    {
-	   	showOutput("onOpenPageSuccess");
-    }
+	{
+		showOutput("onOpenPageSuccess");
+	}
 
 	public override void onOpenPageComplete(PageResult pageResult)
-    {
-		showOutputTitle("onOpenPageComplete",pageResult);
-    }
-	
+	{
+		showOutputTitle("onOpenPageComplete", pageResult);
+	}
+
 	public override void onOpenPageFailed(ErrorMsg errMsg)
 	{
-		showOutputTitle("onStorageFailed",errMsg);
+		showOutputTitle("onStorageFailed", errMsg);
 	}
 
 
 	public override void onBackDownSuccess()
-    {
-	   showOutput("onBackDownSuccess");
-	   //do exit
-    }
+	{
+		showOutput("onBackDownSuccess");
+		//do exit
+	}
 
-	public override void onExtendSuccess(string modName,string json)
-    {
-		showOutputTitle("onExtendSuccess",modName+":"+json);
+	public override void onExtendSuccess(string modName, string json)
+	{
+		showOutputTitle("onExtendSuccess", modName + ":" + json);
 		// cpu_temperature","{\"cpu_temperature\":"+tmpVal+"}"
-    }
+	}
 
-	public override void onExtendFailed(string modName,ErrorMsg msg)
-    {
-	 	showOutputTitle("onExtendFailed",modName+":"+msg.errMsg);
-    }
+	public override void onExtendFailed(string modName, ErrorMsg msg)
+	{
+		showOutputTitle("onExtendFailed", modName + ":" + msg.errMsg);
+	}
 
 	public override void onPaySuccess(PayResult payResult)
-    {
-	   showOutputTitle("onPaySuccess",payResult);
-    }
+	{
+		showOutputTitle("onPaySuccess", payResult);
+	}
 
 	public override void onPayFailed(PayResult payResult)
-    {
-	  showOutputTitle("onPayFailed",payResult);
-    }
+	{
+		showOutputTitle("onPayFailed", payResult);
+	}
 
 	public override void onPayCancel(PayResult payResult)
-    {
-	   showOutputTitle("onPayCancel",payResult);
-    }
+	{
+		showOutputTitle("onPayCancel", payResult);
+	}
 
 	public override void onNotch(NotchResult result)
-    {
-        showOutputTitle("onNotch",result);
-    }
-	
-	
-    public override void onSucceed(string infos)
-    {
-		  showOutputTitle("onSucceed",infos);
-    }
+	{
+		showOutputTitle("onNotch", result);
+	}
 
-    public override void onFailed(string message)
-    {
-          showOutputTitle("onFailed",message);
-    }
 
-	private string getOrderId() {
+	public override void onSucceed(string infos)
+	{
+		showOutputTitle("onSucceed", infos);
+	}
+
+	public override void onFailed(string message)
+	{
+		showOutputTitle("onFailed", message);
+	}
+
+	public override void onSharedSuccess()
+	{
+		showOutputTitle("onSharedSuccess", "");
+	}
+
+	public override void onSharedCancel()
+	{
+		showOutputTitle("onSharedCancel", "");
+	}
+
+	public override void onSharedFail(int code, string msg)
+	{
+		showOutputTitle("onSharedFail", msg);
+	}
+
+	private string getOrderId()
+	{
 		var num = (DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000;
 		return num.ToString();
 	}
 
 
 	void OnApplicationPause(bool pauseStatus)
-    {
-		var t = pauseStatus?1:0;
-		 showLog("OnApplicationPause", "msg: " + t);
-    }
+	{
+		var t = pauseStatus ? 1 : 0;
+		showLog("OnApplicationPause", "msg: " + t);
+	}
 
 	void OnApplicationFocus(bool pauseStatus)
-    {
-		var t = pauseStatus?1:0;
-		 showLog("OnApplicationFocus", "msg: " +t);
-    }
-
-	void OnApplicationQuit() 
 	{
-		 showLog("OnApplicationQuit", "msg: ");
+		var t = pauseStatus ? 1 : 0;
+		showLog("OnApplicationFocus", "msg: " + t);
+	}
+
+	void OnApplicationQuit()
+	{
+		showLog("OnApplicationQuit", "msg: ");
 	}
 
 	void showInput(string message)
@@ -390,9 +465,9 @@ public class BamBooGame : BamBooSdkListener
 		Debug.Log(message);
 	}
 
-	void showOutputTitle(string title,object t)
+	void showOutputTitle(string title, object t)
 	{
-		showOutput(title+":"+Dumper.DumpAsString(t));
+		showOutput(title + ":" + Dumper.DumpAsString(t));
 	}
 
 	void showOutput(string message)
@@ -402,8 +477,8 @@ public class BamBooGame : BamBooSdkListener
 	}
 
 
-    void showLog(string title, string message)
+	void showLog(string title, string message)
 	{
-		Debug.Log ("title: " + title + ", message: " + message);
+		Debug.Log("title: " + title + ", message: " + message);
 	}
 }
