@@ -223,6 +223,12 @@ public class BamBooGame : BamBooSdkListener
 		BamBooSdk.getInstance().getExtend("cpu_temperature");
 	}
 
+	public void tapQuerySku()
+	{
+		showInput("tapQuerySku");
+		BamBooSdk.getInstance().querySkuDetail("com.bamboogamexzsm.gp.60,com.bamboogamexzsm.gp.5880");
+	}
+
 	public void sharedApp()
 	{
 		SharedContent sharedContent = SharedContent.newBuilder().sharedApp().build();
@@ -280,6 +286,13 @@ public class BamBooGame : BamBooSdkListener
 		.build();
 
 		BamBooSdk.getInstance().shared(sharedContent);
+	}
+
+
+	public void tapAccountInherit()
+	{
+				showInput("tapAccountInherit");
+		BamBooSdk.getInstance().accountInherit();
 	}
 
 	//callback
@@ -420,6 +433,17 @@ public class BamBooGame : BamBooSdkListener
 		showOutputTitle("onFailed", message);
 	}
 
+	public override void onSkuQueryDetailSuccess(string message)
+	{
+		showOutputTitle("onSkuQueryDetailSuccess", message);
+	}
+
+	public override void onSkuQueryDetailFailed( ErrorMsg msg)
+	{
+		showOutputTitle("onSkuQueryDetailFailed", msg.errMsg);
+	}
+
+
 	public override void onSharedSuccess()
 	{
 		showOutputTitle("onSharedSuccess", "");
@@ -434,6 +458,12 @@ public class BamBooGame : BamBooSdkListener
 	{
 		showOutputTitle("onSharedFail", msg);
 	}
+
+	public override void onReferrer( string msg)
+	{
+		showOutputTitle("onReferrer", msg);
+	}
+
 
 	private string getOrderId()
 	{
