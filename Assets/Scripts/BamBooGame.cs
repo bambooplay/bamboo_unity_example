@@ -204,8 +204,9 @@ public class BamBooGame : BamBooSdkListener
 
 	public void tapSetLanguage()
 	{
-		showInput("tapSetLanguage");
-		BamBooSdk.getInstance().setLanguage("zh-CN");
+		string lang = inputObj.GetComponent<InputField>().text;
+		Debug.Log(lang);
+		BamBooSdk.getInstance().setLanguage(lang);
 	}
 
 
