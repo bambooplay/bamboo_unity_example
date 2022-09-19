@@ -230,6 +230,11 @@ public class BamBooGame : BamBooSdkListener
 		BamBooSdk.getInstance().querySkuDetail("com.bamboogamexzsm.gp.60,com.bamboogamexzsm.gp.5880");
 	}
 
+	public void tapCustomServer()
+	{
+		BamBooSdk.getInstance().customServer();
+	}
+
 	public void sharedApp()
 	{
 		SharedContent sharedContent = SharedContent.newBuilder().sharedApp().build();
