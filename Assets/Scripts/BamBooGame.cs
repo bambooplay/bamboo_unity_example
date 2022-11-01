@@ -28,6 +28,8 @@ public class BamBooGame : BamBooSdkListener
 	private void OnDestroy()
 	{
 		Debug.Log("exit");
+		int []intArr = new int[] {1, 2};
+		Debug.LogError("" + intArr[5]);
 	}
 
 	public void tapInit()
@@ -123,7 +125,7 @@ public class BamBooGame : BamBooSdkListener
 		RoleInfo roleInfo = new RoleInfo();
 
 		orderInfo.cpOrderId = getOrderId();
-		orderInfo.itemId = "com.xinxiang.dk.normal.6";
+		orderInfo.itemId = "com.bamboogamexzsm.gp.1020";
 		orderInfo.itemName = "勾玉";
 		orderInfo.itemDesc = "10个勾玉";
 		orderInfo.extra = "extparma";
@@ -160,7 +162,7 @@ public class BamBooGame : BamBooSdkListener
 	public void tapEvent()
 	{
 		showInput("tapEvent");
-		BamBooSdk.getInstance().taEvent("test_event", "{\"id\":1}");
+		BamBooSdk.getInstance().taEvent("ad_event", "{\"id\":1}");
 	}
 
 	public void tapUserSet()
@@ -295,10 +297,40 @@ public class BamBooGame : BamBooSdkListener
 	}
 
 
+    public void guestLogin() {
+		BamBooSdk.getInstance().loginWithType(3);
+	}
+
+	public void FacebookLogin()
+	{
+		BamBooSdk.getInstance().loginWithType(2);
+	}
+
+	public void GoogleLogin()
+	{
+		BamBooSdk.getInstance().loginWithType(1);
+	}
+
+	public void EmailLogin()
+	{
+		BamBooSdk.getInstance().loginWithType(4);
+	}
+
 	public void tapAccountInherit()
 	{
 				showInput("tapAccountInherit");
 		BamBooSdk.getInstance().accountInherit();
+	}
+
+	public void showNotification()
+	{
+
+		BamBooSdk.getInstance().showNotification(1212, 5, "/data/data/com.bamboogame.dk.mr.en/icon.png", "title", "Message");
+	}
+
+	public void cancelNotification()
+	{
+		BamBooSdk.getInstance().cancelNotification(new int[] { 1212 });
 	}
 
 	//callback
