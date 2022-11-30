@@ -502,6 +502,15 @@ public class BamBooGame : BamBooSdkListener
 		showOutputTitle("onReferrer", msg);
 	}
 
+	public override void onNotificationToken(string fcmToken)
+	{
+		showLog("onNotificationToken", "fcmToken: " + fcmToken);
+	}
+
+	public override void onLocalNotificationClickSuccess(string notifyData)
+	{
+		showLog("onLocalNotificationClickSuccess", "notifyData: " + notifyData);
+	}
 
 	private string getOrderId()
 	{
