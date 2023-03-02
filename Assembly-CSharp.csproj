@@ -57,15 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/BamBooGame.cs" />
-    <Compile Include="Assets/Scripts/BamBooSdk.cs" />
-    <Compile Include="Assets/Scripts/BamBooSdkJson.cs" />
-    <Compile Include="Assets/Scripts/BamBooSdkListener.cs" />
-    <Compile Include="Assets/Scripts/BamBooSdkNative.cs" />
+    <Compile Include="Assets/Scripts/BambooSDK/BamBooSdk.cs" />
+    <Compile Include="Assets/Scripts/BambooSDK/BamBooSdkJson.cs" />
+    <Compile Include="Assets/Scripts/BambooSDK/BamBooSdkListener.cs" />
+    <Compile Include="Assets/Scripts/BambooSDK/BamBooSdkNative.cs" />
+    <Compile Include="Assets/Scripts/BambooSDK/SharedContent.cs" />
     <Compile Include="Assets/Scripts/Dumper.cs" />
-    <Compile Include="Assets/Scripts/SharedContent.cs" />
-    <Compile Include="Assets/Scripts/TabButtonUI.cs" />
-    <Compile Include="Assets/Scripts/TabsUI.cs" />
-    <Compile Include="Assets/Scripts/TabsUIHorizontal.cs" />
+    <Compile Include="Assets/Scripts/ui/TabButtonUI.cs" />
+    <Compile Include="Assets/Scripts/ui/TabsUI.cs" />
+    <Compile Include="Assets/Scripts/ui/TabsUIHorizontal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
