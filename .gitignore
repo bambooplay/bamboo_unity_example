@@ -3,4 +3,6 @@
 /Temp
 /Assets/Plugins
 .DS_Store
-
+.vs/
+.vsconfig/
+obj/
