@@ -1,0 +1,19 @@
+{
+  "app_id": "1015",
+  "channel_app_id": "1027",
+  "channel_app_key": "",
+  "channel_merchant_id": "",
+  "sdk_channel": "zhuzi",
+  "source_channel": "cn_tt",
+  "ad_position": "0",
+  "app_name": "仙宗大掌门",
+  "is_over_sea": 0,
+  "ta_app_id": "c9688bc17bdf4291b1b93dd9479f38b1",
+  "ta_server_url": "https://receiver.ta.zhuziplay.com",
+  "ba_app_key": "p6zb6a0o4t2510coqa1ikggmlz300alt",
+  "ba_server_url": "https://collect.zhuziplay.com",
+  "zhuzi_time_zone":"GMT+08",
+  "is_log_debug": 0,
+  "bugly_appid":"971eb80a76",
+  "is_dev": false
+}
