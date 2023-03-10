@@ -47,6 +47,7 @@ public class BamBooGame : BamBooSdkListener
 
 	public void acceptAgreement()
 	{
+		Debug.LogError("acceptAgreement");
 		Toggle agreementToggle = GameObject.Find("ToggleAcceptAgreement").GetComponent<Toggle>();
 		BamBooSdk.getInstance().acceptAgreement(agreementToggle.enabled);
 	}
@@ -606,7 +607,6 @@ public class BamBooGame : BamBooSdkListener
 	{
 		
 		string packageName = Application.identifier;
-		packageName = "com.bamboogame.leaf";
 		//DK项目
 		if ("com.bamboogame.leaf".Equals(packageName))
 		{
