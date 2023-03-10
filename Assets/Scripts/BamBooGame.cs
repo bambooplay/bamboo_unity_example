@@ -45,7 +45,7 @@ public class BamBooGame : BamBooSdkListener
 		BamBooSdk.getInstance().enableFloatBall(floatBallToggle.enabled);
 	}
 
-	public void acceptAgreement()
+	public void tapAcceptAgreement()
 	{
 		Debug.LogError("acceptAgreement");
 		Toggle agreementToggle = GameObject.Find("ToggleAcceptAgreement").GetComponent<Toggle>();
@@ -638,6 +638,12 @@ public class BamBooGame : BamBooSdkListener
 			productIdList.Add("com.bamboogamexzsm.gp.4560");
 			productIdList.Add("com.bamboogamexzsm.gp.5880");
 			productIdList.Add("com.bamboogamexzsm.gp.monthlycard");
+		} else if ("com.zhuziplay.xz".Equals(packageName)) {
+			//仙宗新马
+			productIdList.Add("com.zhuziplay.xz.zz.60");
+			productIdList.Add("com.zhuziplay.xz.zz.6480");
+			productIdList.Add("com.zhuziplay.xz.zz.300");
+			productIdList.Add("com.zhuziplay.xz.zz.1280");
 		}
 		Dropdown dropdown = GameObject.Find("DropdownProductId").GetComponent<Dropdown>();
 		Dropdown.OptionData tempData;
