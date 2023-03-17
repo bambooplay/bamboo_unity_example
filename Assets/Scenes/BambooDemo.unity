@@ -916,7 +916,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000011444092, y: 0}
+  m_AnchoredPosition: {x: -0.0000743866, y: 0}
   m_SizeDelta: {x: -24.998938, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &77434811
@@ -12328,45 +12328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f4559f5a972d4e0a8dd0507898efaa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  themeColor:
-    r: 0.5
-    g: 0.5
-    b: 0.5
-    a: 1
-  tabSpacing: 2
-  OnTabChange:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  tabBtns:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  tabContent:
-  - {fileID: 1553244324}
-  - {fileID: 1964361805}
-  - {fileID: 1590185502}
-  - {fileID: 832948582}
-  - {fileID: 777470109}
-  layoutGroup: {fileID: 586302136}
-  tabColorActive:
-    r: 0
-    g: 0
-    b: 0
-    a: 0
-  tabColorInactive:
-    r: 0
-    g: 0
-    b: 0
-    a: 0
-  current: 0
-  previous: 0
-  parentBtns: {fileID: 586302135}
-  parentContent: {fileID: 1000230392}
-  tabBtnsNum: 5
-  tabContentNum: 5
 --- !u!222 &1285920653
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12607,7 +12568,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1201438306}
   m_HandleRect: {fileID: 1201438305}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -14772,7 +14733,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 226334177}
-        m_MethodName: acceptAgreement
+        m_MethodName: tapAcceptAgreement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

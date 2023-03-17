@@ -80,7 +80,7 @@ public class BamBooGame : BamBooSdkListener
 		BamBooSdk.getInstance().enableFloatBall(floatBallToggle.enabled);
 	}
 
-	public void acceptAgreement()
+	public void tapAcceptAgreement()
 	{
 		Debug.LogError("acceptAgreement");
 		Toggle agreementToggle = GameObject.Find("ToggleAcceptAgreement").GetComponent<Toggle>();

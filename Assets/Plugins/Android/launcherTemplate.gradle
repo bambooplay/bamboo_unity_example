@@ -35,16 +35,16 @@ android {
 
     signingConfigs {
         debugConfig{
-            keyAlias "zhuzi"
-            keyPassword "zhuzi2021"
-            storeFile file('../zhuzi.jks')
-            storePassword "zhuzi2021"
+            keyAlias "demo"
+            keyPassword "demo2023"
+            storeFile file('../bamboo_demo.jks')
+            storePassword "demo2023"
         }
         releaseConfig {
-            keyAlias "zhuzi"
-            keyPassword "zhuzi2021"
-            storeFile file('../zhuzi.jks')
-            storePassword "zhuzi2021"
+            keyAlias "demo"
+            keyPassword "demo2023"
+            storeFile file('../bamboo_demo.jks')
+            storePassword "demo2023"
         }
     }
 
