@@ -21,11 +21,6 @@ android {
         minSdkVersion **MINSDKVERSION**
         targetSdkVersion 31
         applicationId '**APPLICATIONID**'
-        manifestPlaceholders = [
-                XG_ACCESS_ID : "1580014425",
-                XG_ACCESS_KEY: "AXDCH2SEG0ME",
-                app_name     : 'SDKDef'
-        ]
         ndk {
             abiFilters **ABIFILTERS**
         }

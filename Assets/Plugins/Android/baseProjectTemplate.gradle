@@ -5,7 +5,7 @@ allprojects {
         repositories {**ARTIFACTORYREPOSITORY**
             google()
             jcenter()
-            maven { url 'https://maven.zhuziplay.com:443/artifactory/sdk-release/'}
+            maven { url 'https://maven.zhuziplay.com/artifactory/sdk-release/'}
         }
 
         dependencies {
@@ -22,7 +22,7 @@ allprojects {
     repositories {**ARTIFACTORYREPOSITORY**
         google()
         jcenter()
-        maven { url 'https://maven.zhuziplay.com:443/artifactory/sdk-release/'}
+        maven { url 'https://maven.zhuziplay.com/artifactory/sdk-release/'}
         flatDir {
             dirs "${project(':unityLibrary').projectDir}/libs"
         }

@@ -14,11 +14,15 @@ public class BamBooGame : BamBooSdkListener
 	private List<string> productIdList = new List<string>();
 
 	private Dictionary<uint, long> _debugMsgDict;
+
+    private GameObject panelGroup;
+
 	// Start is called before the first frame update
 	void Start()
 	{
 		inputObj = GameObject.Find("Canvas/input");
 		outputObj = GameObject.Find("PanelOutput");
+		panelGroup = GameObject.Find("Canvas/PanelBase/PanelContent");
 		setDropdownProductId();
 	}
 
@@ -35,6 +39,37 @@ public class BamBooGame : BamBooSdkListener
 		//Debug.LogError("" + intArr[5]);
 	}
 
+
+	public void tapGroup(string tp)
+	{
+		showOutput("tapGroup "+tp);
+		GameObject.Find("Canvas/PanelBase/PanelContent/Panel Basic").SetActive(false);
+		GameObject.Find("Canvas/PanelBase/PanelContent/Panel Login").SetActive(false);
+		GameObject.Find("Canvas/PanelBase/PanelContent/Panel Advert").SetActive(false);
+		GameObject.Find("Canvas/PanelBase/PanelContent/Panel Shared").SetActive(false);
+		GameObject.Find("Canvas/PanelBase/PanelContent/Panel Other").SetActive(false);
+		switch(tp) {
+			case "base":
+			GameObject.Find("Canvas/PanelBase/PanelContent/Panel Basic").SetActive(true);
+			break;
+			case "login":
+			GameObject.Find("Canvas/PanelBase/PanelContent/Panel Login").SetActive(true);
+			break;
+			case "data":
+			GameObject.Find("Canvas/PanelBase/PanelContent/Panel Advert").SetActive(true);
+			break;
+			case "share":
+			GameObject.Find("Canvas/PanelBase/PanelContent/Panel Shared").SetActive(true);
+			break;
+			case "other":
+			GameObject.Find("Canvas/PanelBase/PanelContent/Panel Other").SetActive(true);
+			break;
+			default:
+			break;
+		}
+
+	}
+
 	public void tapInit()
 	{
 		showOutput("tapInit");
@@ -45,7 +80,7 @@ public class BamBooGame : BamBooSdkListener
 		BamBooSdk.getInstance().enableFloatBall(floatBallToggle.enabled);
 	}
 
-	public void tapAcceptAgreement()
+	public void acceptAgreement()
 	{
 		Debug.LogError("acceptAgreement");
 		Toggle agreementToggle = GameObject.Find("ToggleAcceptAgreement").GetComponent<Toggle>();
@@ -638,12 +673,6 @@ public class BamBooGame : BamBooSdkListener
 			productIdList.Add("com.bamboogamexzsm.gp.4560");
 			productIdList.Add("com.bamboogamexzsm.gp.5880");
 			productIdList.Add("com.bamboogamexzsm.gp.monthlycard");
-		} else if ("com.zhuziplay.xz".Equals(packageName)) {
-			//仙宗新马
-			productIdList.Add("com.zhuziplay.xz.zz.60");
-			productIdList.Add("com.zhuziplay.xz.zz.6480");
-			productIdList.Add("com.zhuziplay.xz.zz.300");
-			productIdList.Add("com.zhuziplay.xz.zz.1280");
 		}
 		Dropdown dropdown = GameObject.Find("DropdownProductId").GetComponent<Dropdown>();
 		Dropdown.OptionData tempData;

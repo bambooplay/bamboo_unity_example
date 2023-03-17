@@ -62,9 +62,6 @@
      <Compile Include="Assets\Scripts\BambooSDK\BamBooSdkNative.cs" />
      <Compile Include="Assets\Scripts\BambooSDK\SharedContent.cs" />
      <Compile Include="Assets\Scripts\Dumper.cs" />
-     <Compile Include="Assets\Scripts\UI\TabButtonUI.cs" />
-     <Compile Include="Assets\Scripts\UI\TabsUI.cs" />
-     <Compile Include="Assets\Scripts\UI\TabsUIHorizontal.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
